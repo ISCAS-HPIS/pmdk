@@ -1718,7 +1718,7 @@ obj_alloc_construct(PMEMobjpool *pop, PMEMoid *oidp, size_t size,
 	pmemobj_constr constructor, void *arg)
 {
 	if (size > PMEMOBJ_MAX_ALLOC_SIZE) {
-		ERR("requested size too large");
+		ERR("requested size too much large");
 		errno = ENOMEM;
 		return -1;
 	}
@@ -1915,7 +1915,7 @@ obj_realloc_common(PMEMobjpool *pop,
 	}
 
 	if (size > PMEMOBJ_MAX_ALLOC_SIZE) {
-		ERR("requested size too large");
+		ERR("requested size too much large");
 		errno = ENOMEM;
 		return -1;
 	}
@@ -2412,7 +2412,7 @@ pmemobj_root_construct(PMEMobjpool *pop, size_t size,
 		arg);
 
 	if (size > PMEMOBJ_MAX_ALLOC_SIZE) {
-		ERR("requested size too large");
+		ERR("requested size too much large");
 		errno = ENOMEM;
 		return OID_NULL;
 	}
@@ -2732,7 +2732,7 @@ pmemobj_list_insert_new(PMEMobjpool *pop, size_t pe_offset, void *head,
 	ASSERT(pe_offset <= size - sizeof(struct list_entry));
 
 	if (size > PMEMOBJ_MAX_ALLOC_SIZE) {
-		ERR("requested size too large");
+		ERR("requested size too much large");
 		errno = ENOMEM;
 		return OID_NULL;
 	}

@@ -24,7 +24,7 @@ extern "C" {
  */
 typedef struct pmemobjpool PMEMobjpool;
 
-#define PMEMOBJ_MAX_ALLOC_SIZE ((size_t)0x3FFDFFFC0)
+#define PMEMOBJ_MAX_ALLOC_SIZE ((size_t)0x7FFBFFFFC0)
 
 /*
  * allocation functions flags

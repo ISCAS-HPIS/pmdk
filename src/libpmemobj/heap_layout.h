@@ -18,7 +18,7 @@ extern "C" {
 #define HEAP_MAJOR 1
 #define HEAP_MINOR 0
 
-#define MAX_CHUNK (UINT16_MAX - 7) /* has to be multiple of 8 */
+#define MAX_CHUNK ((UINT16_MAX - 7) * 32) /* has to be multiple of 8 */
 #define CHUNK_BASE_ALIGNMENT 1024
 #define CHUNKSIZE ((size_t)1024 * 256)	/* 256 kilobytes */
 #define MAX_MEMORY_BLOCK_SIZE (MAX_CHUNK * CHUNKSIZE)

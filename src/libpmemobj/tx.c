@@ -584,7 +584,7 @@ tx_alloc_common(struct tx *tx, size_t size, type_num_t type_num,
 	LOG(3, NULL);
 
 	if (size > PMEMOBJ_MAX_ALLOC_SIZE) {
-		ERR("requested size too large");
+		ERR("requested size too much large");
 		return obj_tx_fail_null(ENOMEM, args.flags);
 	}
 
@@ -629,7 +629,7 @@ tx_realloc_common(struct tx *tx, PMEMoid oid, size_t size, uint64_t type_num,
 	LOG(3, NULL);
 
 	if (size > PMEMOBJ_MAX_ALLOC_SIZE) {
-		ERR("requested size too large");
+		ERR("requested size too much large");
 		return obj_tx_fail_null(ENOMEM, flags);
 	}
 
@@ -1229,7 +1229,7 @@ pmemobj_tx_add_common(struct tx *tx, struct tx_range_def *args)
 	LOG(15, NULL);
 
 	if (args->size > PMEMOBJ_MAX_ALLOC_SIZE) {
-		ERR("snapshot size too large");
+		ERR("snapshot size too much large");
 		return obj_tx_fail_err(EINVAL, args->flags);
 	}
 
